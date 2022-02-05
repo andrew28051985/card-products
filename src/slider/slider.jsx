@@ -5,14 +5,14 @@ import SwiperCore, { Navigation } from "swiper";
 import { Image } from "/src/elements";
 import { StyledSider, StyledButton, SlyderWrapper } from "./styled";
 
-function Slider({ images }) {
+function Slider({ images, width=200, height=257 }) {
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
 
   SwiperCore.use([Navigation]);
 
   return (
-    <SlyderWrapper>
+    <SlyderWrapper width={width}>
       <StyledButton left ref={navigationPrevRef} title="Назад">
         &lt;
       </StyledButton>
@@ -20,6 +20,8 @@ function Slider({ images }) {
         &gt;
       </StyledButton>
       <StyledSider
+        width={width}
+        height={height}
         onBeforeInit={(swiper) => {
           swiper.params.navigation.prevEl = navigationPrevRef.current;
           swiper.params.navigation.nextEl = navigationNextRef.current;
@@ -40,10 +42,9 @@ function Slider({ images }) {
             <SwiperSlide key={image}>
               <Image
                 src={image}
-                alt="изображение продукта"
-                width="200"
-                height="257"
-                maxWidth="200"
+                alt="изображение продукта"                
+                height={height}
+                maxWidth={width}
               />
             </SwiperSlide>
           ))}
