@@ -1,11 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Image } from "/src/elements";
 import FullPrice from "/src/full-price/full-price";
 import { List, ListItem, StyledLink, TitleCatalog } from "./styled";
+import { Wrapper, Nav } from "/src/layout/styled";
 
 export default function Catalog({ products }) {
   return (
     <>
+      <Wrapper>
+        <Nav>
+          <Link to="/">Главная</Link>
+        </Nav>
+      
       <TitleCatalog>Каталог</TitleCatalog>
       <List>
         {products &&
@@ -25,6 +32,7 @@ export default function Catalog({ products }) {
             </ListItem>
           ))}
       </List>
+      </Wrapper>
     </>
   );
 }

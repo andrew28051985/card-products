@@ -6,7 +6,8 @@ export default function Layout({ children }) {
   return (
     <Wrapper>
       <Nav>
-        <Link to="/">Каталог</Link>
+        <Link to="/">Главная</Link>
+        <Link to="/catalog">Каталог</Link>
       </Nav>
       <main>{children}</main>
     </Wrapper>

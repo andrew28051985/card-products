@@ -15,7 +15,7 @@ DefaultTitle.args = {
 
 export const SmallTitle  = Template.bind({});
 SmallTitle.args = {
+  children: 'Заголовок',
   small: true,
-  children: 'Заголовок'
 }
 
